@@ -12,14 +12,33 @@ namespace MelodyGame
 {
     public partial class fGame : Form
     {
+        Random rnd = new Random();
+
         public fGame()
         {
             InitializeComponent();
         }
 
+        void MakeMusic()
+        {
+            int n = rnd.Next(0, GameClass.list.Count);
+            WMP.URL = GameClass.list[n];
+            // WMP.Ctlcontrols.play();
+            GameClass.list.RemoveAt(n);
+        }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
-            WMP.URL = GameClass.list[1];
+            MakeMusic();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void fGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            WMP.Ctlcontrols.stop();
         }
     }
 }
