@@ -58,6 +58,8 @@ namespace MelodyGame
             progressBar1.Value = 0;
             progressBar1.Minimum = 0;
             progressBar1.Maximum = GameClass.gameDuration;
+            lblPlayer1.Text = GameClass.playerOne;
+            lblPlayer2.Text = GameClass.playerTwo;
         }
 
         void EndGame()
@@ -118,6 +120,16 @@ namespace MelodyGame
                 }
                 GamePlay();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayer2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

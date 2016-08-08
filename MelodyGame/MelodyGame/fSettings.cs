@@ -29,6 +29,8 @@ namespace MelodyGame
             GameClass.gameDuration = Convert.ToInt32(cbGameDuration.Text);
             GameClass.musicDuration = Convert.ToInt32(cbMusicDuration.Text);
             GameClass.randomStart = cbRandomStart.Checked;
+            GameClass.playerOne = tbPlayer1.Text;
+            GameClass.playerTwo = tbPlayer2.Text;
             GameClass.WriteParam();
             this.Hide();
         }
@@ -45,6 +47,8 @@ namespace MelodyGame
             cbGameDuration.Text = GameClass.gameDuration.ToString();
             cbMusicDuration.Text = GameClass.musicDuration.ToString();
             cbRandomStart.Checked = GameClass.randomStart;
+            tbPlayer1.Text = GameClass.playerOne;
+            tbPlayer2.Text = GameClass.playerTwo;
         }
 
         private void btnSelectFolder_Click(object sender, EventArgs e)
@@ -74,6 +78,16 @@ namespace MelodyGame
         }
 
         private void cbRandomStart_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPlayer2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPlayer1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
             this.btnNext = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.lblCounter1 = new System.Windows.Forms.Label();
             this.lblCounter2 = new System.Windows.Forms.Label();
             this.btnPause = new System.Windows.Forms.Button();
@@ -59,28 +59,30 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // label1
+            // lblPlayer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(75, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Игрок 1";
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPlayer1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblPlayer1.Location = new System.Drawing.Point(75, 37);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(95, 25);
+            this.lblPlayer1.TabIndex = 2;
+            this.lblPlayer1.Text = "Игрок 1";
+            this.lblPlayer1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblPlayer2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(615, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Игрок 2";
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPlayer2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblPlayer2.Location = new System.Drawing.Point(615, 37);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(95, 25);
+            this.lblPlayer2.TabIndex = 3;
+            this.lblPlayer2.Text = "Игрок 2";
+            this.lblPlayer2.Click += new System.EventHandler(this.lblPlayer2_Click);
             // 
             // lblCounter1
             // 
@@ -209,8 +211,8 @@
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.lblCounter2);
             this.Controls.Add(this.lblCounter1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPlayer2);
+            this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.WMP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -230,8 +232,8 @@
 
         private AxWMPLib.AxWindowsMediaPlayer WMP;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPlayer1;
+        private System.Windows.Forms.Label lblPlayer2;
         private System.Windows.Forms.Label lblCounter1;
         private System.Windows.Forms.Label lblCounter2;
         private System.Windows.Forms.Button btnPause;

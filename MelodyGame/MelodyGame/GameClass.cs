@@ -16,6 +16,8 @@ namespace MelodyGame
         static public bool randomStart = false;
         static public string lastFolder = "";
         static public bool foldersInclude = false;
+        static public string playerOne = "Игрок 1";
+        static public string playerTwo = "Игрок 2";
 
         static public void ReadMusic()
         {
@@ -45,6 +47,9 @@ namespace MelodyGame
                 rk.SetValue("GameDuration", gameDuration);
                 rk.SetValue("MusicDuration", musicDuration);
                 rk.SetValue("FoldersInclude", foldersInclude);
+                rk.SetValue("PlayerOne", playerOne);
+                rk.SetValue("PlayerTwo", playerTwo);
+
             }
             finally
             {
@@ -66,6 +71,8 @@ namespace MelodyGame
                     randomStart = Convert.ToBoolean(rk.GetValue("RandomStart", false));
                     musicDuration = (int)rk.GetValue("MusicDuration");
                     foldersInclude = Convert.ToBoolean(rk.GetValue("FoldersInclude", false));
+                    playerOne = (string)rk.GetValue("PlayerOne");
+                    playerTwo = (string)rk.GetValue("PlayerTwo");
                 }
             }
             finally
