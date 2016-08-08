@@ -38,7 +38,7 @@
             // 
             this.btnPlay.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnPlay.Location = new System.Drawing.Point(103, 62);
+            this.btnPlay.Location = new System.Drawing.Point(207, 79);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(292, 50);
             this.btnPlay.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.btnSettings.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSettings.Location = new System.Drawing.Point(103, 128);
+            this.btnSettings.Location = new System.Drawing.Point(207, 145);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(292, 50);
             this.btnSettings.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnExit.Location = new System.Drawing.Point(103, 193);
+            this.btnExit.Location = new System.Drawing.Point(207, 210);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(292, 50);
             this.btnExit.TabIndex = 2;
@@ -74,7 +74,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 327);
+            this.BackgroundImage = global::MelodyGame.Properties.Resources._985;
+            this.ClientSize = new System.Drawing.Size(706, 343);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnPlay);
@@ -82,6 +83,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fMain";
             this.Text = "Угадай мелидию";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.ResumeLayout(false);
 
         }

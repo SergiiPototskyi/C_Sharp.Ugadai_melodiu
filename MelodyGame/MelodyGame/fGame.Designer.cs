@@ -37,10 +37,10 @@
             // WMP
             // 
             this.WMP.Enabled = true;
-            this.WMP.Location = new System.Drawing.Point(52, 211);
+            this.WMP.Location = new System.Drawing.Point(297, 376);
             this.WMP.Name = "WMP";
             this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
-            this.WMP.Size = new System.Drawing.Size(30, 33);
+            this.WMP.Size = new System.Drawing.Size(469, 46);
             this.WMP.TabIndex = 0;
             this.WMP.Visible = false;
             // 
@@ -48,9 +48,9 @@
             // 
             this.btnNext.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnNext.Location = new System.Drawing.Point(238, 211);
+            this.btnNext.Location = new System.Drawing.Point(428, 226);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(120, 45);
+            this.btnNext.Size = new System.Drawing.Size(218, 64);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Следующая";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -60,7 +60,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 343);
+            this.BackgroundImage = global::MelodyGame.Properties.Resources._985;
+            this.ClientSize = new System.Drawing.Size(1086, 556);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.WMP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

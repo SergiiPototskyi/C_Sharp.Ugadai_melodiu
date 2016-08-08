@@ -25,13 +25,26 @@ namespace MelodyGame
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            GameClass.foldersInclude = cbInclude.Checked;
+            GameClass.gameDuration = Convert.ToInt32(cbGameDuration.Text);
+            GameClass.musicDuration = Convert.ToInt32(cbMusicDuration.Text);
+            GameClass.randomStart = cbRandomStart.Checked;
             GameClass.WriteParam();
             this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Set();
             this.Hide();
+        }
+
+        void Set()
+        {
+            cbInclude.Checked = GameClass.foldersInclude;
+            cbGameDuration.Text = GameClass.gameDuration.ToString();
+            cbMusicDuration.Text = GameClass.musicDuration.ToString();
+            cbRandomStart.Checked = GameClass.randomStart;
         }
 
         private void btnSelectFolder_Click(object sender, EventArgs e)
@@ -40,11 +53,24 @@ namespace MelodyGame
             if(fbd.ShowDialog() == DialogResult.OK)
             {
                 string[] music_list = Directory.GetFiles(fbd.SelectedPath, "*.mp3", cbInclude.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+                GameClass.lastFolder = fbd.SelectedPath;
                 listBox1.Items.Clear();
                 listBox1.Items.AddRange(music_list);
                 GameClass.list.Clear();
                 GameClass.list.AddRange(music_list);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fSettings_Load(object sender, EventArgs e)
+        {
+            Set();
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(GameClass.list.ToArray());
         }
     }
 }

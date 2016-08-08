@@ -34,5 +34,11 @@ namespace MelodyGame
         {
             fs.ShowDialog();
         }
+
+        private void fMain_Load(object sender, EventArgs e)
+        {
+            GameClass.ReadParam();
+            GameClass.ReadMusic();
+        }
     }
 }

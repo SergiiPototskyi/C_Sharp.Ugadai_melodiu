@@ -19,9 +19,16 @@ namespace MelodyGame
 
         static public void ReadMusic()
         {
-            string[] music_files = Directory.GetFiles(lastFolder, "*.mp3", foldersInclude ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
-            list.Clear();
-            list.AddRange(music_files);
+            try
+            {
+                string[] music_files = Directory.GetFiles(lastFolder, "*.mp3", foldersInclude ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+                list.Clear();
+                list.AddRange(music_files);
+            }
+            catch
+            {
+            }
+            
         }
 
         static string regKeyName = "Software\\MelodyInc\\MelodyGame";
