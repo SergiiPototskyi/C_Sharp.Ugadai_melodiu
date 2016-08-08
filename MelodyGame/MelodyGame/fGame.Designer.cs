@@ -28,27 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
-            this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnNext = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCounter1 = new System.Windows.Forms.Label();
             this.lblCounter2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.lblSongCounter = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // WMP
-            // 
-            this.WMP.Enabled = true;
-            this.WMP.Location = new System.Drawing.Point(161, 461);
-            this.WMP.Name = "WMP";
-            this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
-            this.WMP.Size = new System.Drawing.Size(40, 36);
-            this.WMP.TabIndex = 0;
-            this.WMP.Visible = false;
             // 
             // btnNext
             // 
@@ -107,37 +101,73 @@
             this.lblCounter2.TabIndex = 5;
             this.lblCounter2.Text = "Очки";
             // 
-            // button1
+            // btnPause
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(349, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "II";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPause.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnPause.Location = new System.Drawing.Point(349, 370);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(83, 47);
+            this.btnPause.TabIndex = 6;
+            this.btnPause.Text = "II";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnContinue
             // 
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(456, 370);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 47);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Продолжить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnContinue.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnContinue.Location = new System.Drawing.Point(456, 370);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(159, 47);
+            this.btnContinue.TabIndex = 7;
+            this.btnContinue.Text = "Продолжить";
+            this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // lblSongCounter
+            // 
+            this.lblSongCounter.AutoSize = true;
+            this.lblSongCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSongCounter.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblSongCounter.Location = new System.Drawing.Point(362, 37);
+            this.lblSongCounter.Name = "lblSongCounter";
+            this.lblSongCounter.Size = new System.Drawing.Size(42, 44);
+            this.lblSongCounter.TabIndex = 8;
+            this.lblSongCounter.Text = "0";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(80, 320);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(630, 23);
+            this.progressBar1.TabIndex = 9;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // WMP
+            // 
+            this.WMP.Enabled = true;
+            this.WMP.Location = new System.Drawing.Point(161, 461);
+            this.WMP.Name = "WMP";
+            this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
+            this.WMP.Size = new System.Drawing.Size(40, 36);
+            this.WMP.TabIndex = 0;
+            this.WMP.Visible = false;
             // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MelodyGame.Properties.Resources._985;
-            this.ClientSize = new System.Drawing.Size(757, 480);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(756, 493);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lblSongCounter);
+            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.lblCounter2);
             this.Controls.Add(this.lblCounter1);
             this.Controls.Add(this.label2);
@@ -148,6 +178,7 @@
             this.Name = "fGame";
             this.Text = "Угадай мелодию";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
+            this.Load += new System.EventHandler(this.fGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,7 +193,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCounter1;
         private System.Windows.Forms.Label lblCounter2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label lblSongCounter;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

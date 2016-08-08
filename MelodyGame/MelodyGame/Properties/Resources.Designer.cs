@@ -79,5 +79,65 @@ namespace MelodyGame.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bFyfj_drfgo {
+            get {
+                object obj = ResourceManager.GetObject("bFyfj-drfgo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap C__Викторина_Угадай_мелодию {
+            get {
+                object obj = ResourceManager.GetObject("C__Викторина_Угадай_мелодию", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_37_shelves_my_iphone_5_wallpaper_hd_shelves_18_ {
+            get {
+                object obj = ResourceManager.GetObject("gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_37_shelves_my_iphone_5_wallpaper_hd_shelves_18_1 {
+            get {
+                object obj = ResourceManager.GetObject("gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_37_shelves_my_iphone_5_wallpaper_hd_shelves_18_2 {
+            get {
+                object obj = ResourceManager.GetObject("gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZKSUoXq5Of8 {
+            get {
+                object obj = ResourceManager.GetObject("ZKSUoXq5Of8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

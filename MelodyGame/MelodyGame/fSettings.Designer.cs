@@ -139,19 +139,18 @@
             // 
             this.cbGameDuration.FormattingEnabled = true;
             this.cbGameDuration.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
             "30",
-            "45",
-            "60",
-            "90",
-            "120",
-            "150",
-            "180",
-            "210"});
+            "35",
+            "40"});
             this.cbGameDuration.Location = new System.Drawing.Point(98, 18);
             this.cbGameDuration.Name = "cbGameDuration";
             this.cbGameDuration.Size = new System.Drawing.Size(36, 21);
             this.cbGameDuration.TabIndex = 2;
-            this.cbGameDuration.Text = "60";
+            this.cbGameDuration.Text = "15";
             // 
             // cbMusicDuration
             // 
