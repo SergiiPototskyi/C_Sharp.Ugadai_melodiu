@@ -13,6 +13,7 @@ namespace MelodyGame
     public partial class fMain : Form
     {
         fSettings fs = new fSettings();
+        fGame fg = new fGame();
 
         public fMain()
         {
@@ -26,7 +27,7 @@ namespace MelodyGame
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-
+            fg.ShowDialog();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
