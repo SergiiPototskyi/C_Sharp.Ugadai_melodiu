@@ -72,5 +72,10 @@ namespace MelodyGame
             listBox1.Items.Clear();
             listBox1.Items.AddRange(GameClass.list.ToArray());
         }
+
+        private void cbRandomStart_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

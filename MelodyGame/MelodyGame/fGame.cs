@@ -13,6 +13,7 @@ namespace MelodyGame
     public partial class fGame : Form
     {
         Random rnd = new Random();
+        int musicDuration = GameClass.musicDuration;
 
         public fGame()
         {
@@ -21,11 +22,16 @@ namespace MelodyGame
 
         void MakeMusic()
         {
-            int n = rnd.Next(0, GameClass.list.Count);
-            WMP.URL = GameClass.list[n];
-            // WMP.Ctlcontrols.play();
-            GameClass.list.RemoveAt(n);
-            lblSongCounter.Text = GameClass.list.Count.ToString();
+            if (GameClass.list.Count == 0) EndGame();
+            else
+            {
+                musicDuration = GameClass.musicDuration;
+                int n = rnd.Next(0, GameClass.list.Count);
+                WMP.URL = GameClass.list[n];
+                // WMP.Ctlcontrols.play();
+                GameClass.list.RemoveAt(n);
+                lblSongCounter.Text = GameClass.list.Count.ToString();
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -36,12 +42,12 @@ namespace MelodyGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
-            WMP.Ctlcontrols.pause();
+            GamePause();
         }
 
         private void fGame_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timer1.Stop();
             WMP.Ctlcontrols.stop();
         }
 
@@ -54,19 +60,64 @@ namespace MelodyGame
             progressBar1.Maximum = GameClass.gameDuration;
         }
 
+        void EndGame()
+        {
+            timer1.Stop();
+            WMP.Ctlcontrols.stop();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Value++;
+            musicDuration--;
+            lblMusicDuration.Text = musicDuration.ToString();
             if(progressBar1.Value == progressBar1.Maximum)
             {
-                timer1.Stop();
+                EndGame();
+                return;
             }
+            if (musicDuration == 0) MakeMusic();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            GamePlay();
+        }
+
+        void GamePause()
+        {
+            timer1.Stop();
+            WMP.Ctlcontrols.pause();
+        }
+
+        void GamePlay()
+        {
             timer1.Start();
             WMP.Ctlcontrols.play();
+        }
+
+        private void fGame_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Q)
+            {
+                GamePause();
+                if(MessageBox.Show("Игрок 1", "Ответ правильный?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lblCounter1.Text = Convert.ToString(Convert.ToInt32(lblCounter1.Text) + 1);
+                    MakeMusic();
+                }
+                GamePlay();
+            }
+            if (e.KeyData == Keys.P)
+            {
+                GamePause();
+                if (MessageBox.Show("Игрок 1", "Ответ правильный?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lblCounter2.Text = Convert.ToString(Convert.ToInt32(lblCounter2.Text) + 1);
+                    MakeMusic();
+                }
+                GamePlay();
+            }
         }
     }
 }

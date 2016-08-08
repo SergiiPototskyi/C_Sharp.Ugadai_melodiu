@@ -124,6 +124,24 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C__Викторина_Угадай_мелодию.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gallery-37_shelves-my-iphone-5-wallpaper-hd-shelves-18-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bFyfj-drfgo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZKSUoXq5Of8.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

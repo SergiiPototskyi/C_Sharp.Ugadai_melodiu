@@ -41,6 +41,9 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
+            this.lblMusicDuration = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,24 +85,24 @@
             // lblCounter1
             // 
             this.lblCounter1.AutoSize = true;
-            this.lblCounter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCounter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCounter1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblCounter1.Location = new System.Drawing.Point(87, 97);
+            this.lblCounter1.Location = new System.Drawing.Point(75, 109);
             this.lblCounter1.Name = "lblCounter1";
-            this.lblCounter1.Size = new System.Drawing.Size(66, 25);
+            this.lblCounter1.Size = new System.Drawing.Size(36, 37);
             this.lblCounter1.TabIndex = 4;
-            this.lblCounter1.Text = "Очки";
+            this.lblCounter1.Text = "0";
             // 
             // lblCounter2
             // 
             this.lblCounter2.AutoSize = true;
-            this.lblCounter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCounter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCounter2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblCounter2.Location = new System.Drawing.Point(626, 97);
+            this.lblCounter2.Location = new System.Drawing.Point(615, 109);
             this.lblCounter2.Name = "lblCounter2";
-            this.lblCounter2.Size = new System.Drawing.Size(66, 25);
+            this.lblCounter2.Size = new System.Drawing.Size(36, 37);
             this.lblCounter2.TabIndex = 5;
-            this.lblCounter2.Text = "Очки";
+            this.lblCounter2.Text = "0";
             // 
             // btnPause
             // 
@@ -128,11 +131,11 @@
             // lblSongCounter
             // 
             this.lblSongCounter.AutoSize = true;
-            this.lblSongCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 29.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSongCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblSongCounter.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblSongCounter.Location = new System.Drawing.Point(362, 37);
+            this.lblSongCounter.Location = new System.Drawing.Point(378, 28);
             this.lblSongCounter.Name = "lblSongCounter";
-            this.lblSongCounter.Size = new System.Drawing.Size(42, 44);
+            this.lblSongCounter.Size = new System.Drawing.Size(36, 37);
             this.lblSongCounter.TabIndex = 8;
             this.lblSongCounter.Text = "0";
             // 
@@ -158,12 +161,48 @@
             this.WMP.TabIndex = 0;
             this.WMP.Visible = false;
             // 
+            // lblMusicDuration
+            // 
+            this.lblMusicDuration.AutoSize = true;
+            this.lblMusicDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblMusicDuration.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblMusicDuration.Location = new System.Drawing.Point(379, 79);
+            this.lblMusicDuration.Name = "lblMusicDuration";
+            this.lblMusicDuration.Size = new System.Drawing.Size(35, 37);
+            this.lblMusicDuration.TabIndex = 10;
+            this.lblMusicDuration.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Location = new System.Drawing.Point(222, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Времени осталось";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label4.Location = new System.Drawing.Point(222, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Треков осталось";
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MelodyGame.Properties.Resources._985;
             this.ClientSize = new System.Drawing.Size(756, 493);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMusicDuration);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblSongCounter);
             this.Controls.Add(this.btnContinue);
@@ -175,10 +214,12 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.WMP);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "fGame";
-            this.Text = "Угадай мелодию";
+            this.Text = "І";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
             this.Load += new System.EventHandler(this.fGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,5 +239,8 @@
         private System.Windows.Forms.Label lblSongCounter;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblMusicDuration;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
