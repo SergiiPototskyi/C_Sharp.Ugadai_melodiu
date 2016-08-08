@@ -12,6 +12,8 @@ namespace MelodyGame
 {
     public partial class fMain : Form
     {
+        fSettings fs = new fSettings();
+
         public fMain()
         {
             InitializeComponent();
@@ -25,6 +27,11 @@ namespace MelodyGame
         private void btnPlay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            fs.ShowDialog();
         }
     }
 }
