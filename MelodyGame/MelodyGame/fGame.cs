@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace MelodyGame
 {
@@ -78,7 +79,7 @@ namespace MelodyGame
                 EndGame();
                 return;
             }
-            if (musicDuration == 0) MakeMusic();
+            if (musicDuration == 0)MakeMusic();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -103,7 +104,11 @@ namespace MelodyGame
             if(e.KeyData == Keys.Q)
             {
                 GamePause();
-                if(MessageBox.Show("Игрок 1", "Ответ правильный?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                fMessage fm = new fMessage();
+                fm.lblMessage.Text = GameClass.playerOne;
+                SoundPlayer sp = new SoundPlayer("Resources\\1.wav");
+                sp.PlaySync();
+                if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     lblCounter1.Text = Convert.ToString(Convert.ToInt32(lblCounter1.Text) + 1);
                     MakeMusic();
@@ -113,7 +118,11 @@ namespace MelodyGame
             if (e.KeyData == Keys.P)
             {
                 GamePause();
-                if (MessageBox.Show("Игрок 1", "Ответ правильный?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                fMessage fm = new fMessage();
+                fm.lblMessage.Text = GameClass.playerTwo;
+                SoundPlayer sp = new SoundPlayer("Resources\\1.wav");
+                sp.PlaySync();
+                if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     lblCounter2.Text = Convert.ToString(Convert.ToInt32(lblCounter2.Text) + 1);
                     MakeMusic();
@@ -128,6 +137,18 @@ namespace MelodyGame
         }
 
         private void lblPlayer2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WMP_OpenStateChange(object sender, AxWMPLib._WMPOCXEvents_OpenStateChangeEvent e)
+        {
+            if (GameClass.randomStart)
+                if (WMP.openState == WMPLib.WMPOpenState.wmposMediaOpen)
+                    WMP.Ctlcontrols.currentPosition = rnd.Next(0, (int)WMP.currentMedia.duration / 2);
+        }
+
+        private void lblCounter1_Click(object sender, EventArgs e)
         {
 
         }

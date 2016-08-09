@@ -94,6 +94,7 @@
             this.lblCounter1.Size = new System.Drawing.Size(36, 37);
             this.lblCounter1.TabIndex = 4;
             this.lblCounter1.Text = "0";
+            this.lblCounter1.Click += new System.EventHandler(this.lblCounter1_Click);
             // 
             // lblCounter2
             // 
@@ -162,6 +163,7 @@
             this.WMP.Size = new System.Drawing.Size(40, 36);
             this.WMP.TabIndex = 0;
             this.WMP.Visible = false;
+            this.WMP.OpenStateChange += new AxWMPLib._WMPOCXEvents_OpenStateChangeEventHandler(this.WMP_OpenStateChange);
             // 
             // lblMusicDuration
             // 
