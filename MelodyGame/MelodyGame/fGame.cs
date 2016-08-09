@@ -102,6 +102,7 @@ namespace MelodyGame
 
         private void fGame_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!timer1.Enabled) return;
             if(e.KeyData == Keys.Q)
             {
                 GamePause();

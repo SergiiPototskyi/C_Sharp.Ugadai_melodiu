@@ -13,6 +13,8 @@ namespace MelodyGame
 {
     public partial class fSettings : Form
     {
+        string[] music_list;
+
         public fSettings()
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace MelodyGame
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if(fbd.ShowDialog() == DialogResult.OK)
             {
-                string[] music_list = Directory.GetFiles(fbd.SelectedPath, "*.mp3", cbInclude.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
+                music_list = Directory.GetFiles(fbd.SelectedPath, "*.mp3", cbInclude.Checked ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
                 GameClass.lastFolder = fbd.SelectedPath;
                 listBox1.Items.Clear();
                 listBox1.Items.AddRange(music_list);
@@ -95,6 +97,8 @@ namespace MelodyGame
         private void btnClearList_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            GameClass.list.Clear();
+            n++;
         }
     }
 }
