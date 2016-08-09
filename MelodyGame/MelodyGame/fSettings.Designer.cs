@@ -36,6 +36,8 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbPlayer2 = new System.Windows.Forms.TextBox();
+            this.tbPlayer1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbRandomStart = new System.Windows.Forms.CheckBox();
@@ -43,8 +45,6 @@
             this.cbGameDuration = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbPlayer1 = new System.Windows.Forms.TextBox();
-            this.tbPlayer2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             this.btnClearList.TabIndex = 2;
             this.btnClearList.Text = "Очистить";
             this.btnClearList.UseVisualStyleBackColor = true;
+            this.btnClearList.Click += new System.EventHandler(this.btnClearList_Click);
             // 
             // cbInclude
             // 
@@ -125,6 +126,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки игры";
             // 
+            // tbPlayer2
+            // 
+            this.tbPlayer2.Location = new System.Drawing.Point(197, 50);
+            this.tbPlayer2.Name = "tbPlayer2";
+            this.tbPlayer2.Size = new System.Drawing.Size(100, 22);
+            this.tbPlayer2.TabIndex = 12;
+            this.tbPlayer2.Text = "Игрок 2";
+            // 
+            // tbPlayer1
+            // 
+            this.tbPlayer1.Location = new System.Drawing.Point(197, 18);
+            this.tbPlayer1.Name = "tbPlayer1";
+            this.tbPlayer1.Size = new System.Drawing.Size(100, 22);
+            this.tbPlayer1.TabIndex = 11;
+            this.tbPlayer1.Text = "Игрок 1";
+            this.tbPlayer1.TextChanged += new System.EventHandler(this.tbPlayer1_TextChanged);
+            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -174,13 +192,12 @@
             // 
             this.cbGameDuration.FormattingEnabled = true;
             this.cbGameDuration.Items.AddRange(new object[] {
-            "10",
-            "15",
-            "20",
-            "25",
             "30",
-            "35",
-            "40"});
+            "45",
+            "60",
+            "90",
+            "120",
+            "240"});
             this.cbGameDuration.Location = new System.Drawing.Point(98, 18);
             this.cbGameDuration.Name = "cbGameDuration";
             this.cbGameDuration.Size = new System.Drawing.Size(36, 24);
@@ -205,23 +222,6 @@
             this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Время игры";
-            // 
-            // tbPlayer1
-            // 
-            this.tbPlayer1.Location = new System.Drawing.Point(197, 18);
-            this.tbPlayer1.Name = "tbPlayer1";
-            this.tbPlayer1.Size = new System.Drawing.Size(100, 22);
-            this.tbPlayer1.TabIndex = 11;
-            this.tbPlayer1.Text = "Игрок 1";
-            this.tbPlayer1.TextChanged += new System.EventHandler(this.tbPlayer1_TextChanged);
-            // 
-            // tbPlayer2
-            // 
-            this.tbPlayer2.Location = new System.Drawing.Point(197, 50);
-            this.tbPlayer2.Name = "tbPlayer2";
-            this.tbPlayer2.Size = new System.Drawing.Size(100, 22);
-            this.tbPlayer2.TabIndex = 12;
-            this.tbPlayer2.Text = "Игрок 2";
             // 
             // fSettings
             // 

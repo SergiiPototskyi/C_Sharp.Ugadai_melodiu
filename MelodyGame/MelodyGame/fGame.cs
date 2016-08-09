@@ -29,7 +29,7 @@ namespace MelodyGame
                 musicDuration = GameClass.musicDuration;
                 int n = rnd.Next(0, GameClass.list.Count);
                 WMP.URL = GameClass.list[n];
-                GameClass.answer =System.IO.Path.GetFileNameWithoutExtension(WMP.URL);
+                GameClass.answer = WMP.URL;
                 // WMP.Ctlcontrols.play();
                 GameClass.list.RemoveAt(n);
                 lblSongCounter.Text = GameClass.list.Count.ToString();
@@ -114,6 +114,10 @@ namespace MelodyGame
                     lblCounter1.Text = Convert.ToString(Convert.ToInt32(lblCounter1.Text) + 1);
                     MakeMusic();
                 }
+                else
+                {
+                    lblCounter1.Text = Convert.ToString(Convert.ToInt32(lblCounter1.Text) - 1);
+                }
                 GamePlay();
             }
             if (e.KeyData == Keys.P)
@@ -121,12 +125,16 @@ namespace MelodyGame
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.lblMessage.Text = GameClass.playerTwo;
-                SoundPlayer sp = new SoundPlayer("Resources\\1.wav");
+                SoundPlayer sp = new SoundPlayer("Resources\\2.wav");
                 sp.PlaySync();
                 if (fm.ShowDialog() == DialogResult.Yes)
                 {
                     lblCounter2.Text = Convert.ToString(Convert.ToInt32(lblCounter2.Text) + 1);
                     MakeMusic();
+                }
+                else
+                {
+                    lblCounter2.Text = Convert.ToString(Convert.ToInt32(lblCounter2.Text) - 1);
                 }
                 GamePlay();
             }

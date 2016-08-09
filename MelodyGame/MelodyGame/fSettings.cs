@@ -91,5 +91,10 @@ namespace MelodyGame
         {
 
         }
+
+        private void btnClearList_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+        }
     }
 }
