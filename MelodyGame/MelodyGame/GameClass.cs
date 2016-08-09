@@ -18,6 +18,7 @@ namespace MelodyGame
         static public bool foldersInclude = false;
         static public string playerOne = "Игрок 1";
         static public string playerTwo = "Игрок 2";
+        static public string answer = "";
 
         static public void ReadMusic()
         {

@@ -29,6 +29,7 @@ namespace MelodyGame
                 musicDuration = GameClass.musicDuration;
                 int n = rnd.Next(0, GameClass.list.Count);
                 WMP.URL = GameClass.list[n];
+                GameClass.answer =System.IO.Path.GetFileNameWithoutExtension(WMP.URL);
                 // WMP.Ctlcontrols.play();
                 GameClass.list.RemoveAt(n);
                 lblSongCounter.Text = GameClass.list.Count.ToString();
